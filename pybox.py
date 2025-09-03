@@ -18,10 +18,10 @@ ENABLE_MUSIC = True
 
 def get_git():
     try:
-        return subprocess.check_output(["git", "rev-parse", "HEAD"]).decode("utf-8").strip()
+        return subprocess.check_output(["git", "rev-parse", "--short=6", "HEAD"]).decode("utf-8").strip()
     except subprocess.CalledProcessError:
         return "Гит шарманит, рестартай прогу."
-git_commit = get_git()
+git_commit = "⚙️pybox " + get_git()
 city = "Москоу"
 
 # - Погода -
