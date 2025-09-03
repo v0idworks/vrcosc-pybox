@@ -24,6 +24,8 @@
 - работать на гноме,i3,сBей,cinnаmon,баджи,unity,и на том что не кде.
 
 ---
+## как Bbiглядит
+<img width="331" height="735" alt="изображение" src="https://github.com/user-attachments/assets/da872c9d-061b-4c03-880d-d6b92d0da588"/>
 
 ## Что нужно
 - Python 3
