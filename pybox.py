@@ -125,7 +125,7 @@ while True:
         parts.append(hw_msg)
     if ENABLE_WEATHER: parts.append(weather_info)
     if ENABLE_RANDOM: parts.append(f"💬 {random.choice(custom_messages)}")
-    if ENABLE_STATIC: parts.append(static_message)
+    if ENABLE_COMMIT: parts.append(git_commit)
     if ENABLE_WINDOW: parts.append(get_window())
     if ENABLE_MUSIC:
         m = get_music()
