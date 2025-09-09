@@ -71,6 +71,8 @@ Alpine Linux(не тестил)
 ```
 ### поддержать меня
 [криптобот](https://t.me/send?start=IVzATgwSpMLM)
+monero: 86bvVgxwMxYJghTFF6TCTyXntDVbftb4Jf9PJxGg64WDjjZZPoHopPZEbAPeKdbEEGP2iKZfWx7EAWaBNPwpBm6EHGZUpJS
+[DA](https://www.donationalerts.com/c/random_tnt)
 #### кредитbi
 - сделано с <3 командой v0idworks(а именно рандомом_тнт)
 - спасибо линусу дройдBардсу за git и линукс 
