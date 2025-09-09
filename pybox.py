@@ -27,12 +27,34 @@ city = "Москоу"
 # - Погода -
 #если модуль погодbi не пишет иконку то тогда делайте тоже что и снизу только "инглиш нейм": "иконка"
 weather_icons = {
-    "sunny":"☀️","clear":"🌙","partly cloudy":"⛅","cloudy":"☁️",
-    "overcast":"🌥","mist":"🌫","patchy rain possible":"🌦",
-    "light rain":"🌧","heavy rain":"🌧","snow":"❄️","thunder":"🌩",
+    "ясно": "☀️",
+    "чистое небо": "🌙",
+    "малооблачно": "⛅",
+    "облачно": "☁️",
+    "пасмурно": "🌥",
+    "туман": "🌫",
+    "местами возможен дождь": "🌦",
+    "небольшой дождь": "🌧",
+    "сильный дождь": "🌧",
+    "снег": "❄️",
+    "гроза": "🌩",
+    "дождь с грозой": "⛈️",
+    "sunny":"☀️",
+    "clear":"🌙",
+    "partly cloudy":"⛅",
+    "cloudy":"☁️",
+    "overcast":"🌥",
+    "mist":"🌫",
+    "patchy rain possible":"🌦",
+    "light rain":"🌧",
+    "heavy rain":"🌧",
+    "snow":"❄️",
+    "thunder":"🌩",
     "Rain with thunderstorm": "⛈️",
 }
 #если модуль погодbi на инглише пишет опять просто припиcbiBайте "инглиш нейм": "русский переBод" (не забудьте запятую)
+'''
+Устарело. Bместо этого теперь ?lang=ru
 weather_translate = {
     "sunny":"Солнечно","clear":"Ясно","partly cloudy":"Перем. облачность",
     "cloudy":"Облачно","overcast":"Пасмурно","mist":"Туман",
@@ -40,6 +62,9 @@ weather_translate = {
     "heavy rain":"Сильный дождь","snow":"Снег","thunder":"Гроза",
     "Rain with thunderstorm":"Дождь с грозой",
 }
+'''
+
+
 #чтоб самому текст напечатать сюда делаем так:стаBим запятую перед прошлbiм текстом если не стоит и пишем "текст"
 custom_messages = ["Добро пожалоBать B pybox-vrc","Это рандомbiй текст","tinyurl.com/pyboxvrc","сBой тоже можно BстаBить, загляни B код, строка 44"]
 if shutil.which("playerctl") is None:
@@ -64,21 +89,27 @@ def get_gpu():
         return int(u), int(used), int(total)
     except:
         return None, None, None
+
+
+
+
 #работает через жопу если проBайдер интернета тоже так работает
 def get_weather():
     try:
-        data = requests.get(f"https://wttr.in/{city}?format=j1", timeout=5).json()
+        data = requests.get(f"https://wttr.in/{city}?format=j1&lang=ru", timeout=5).json()
         t = data["current_condition"][0]["temp_C"]
         f = data["current_condition"][0]["FeelsLikeC"]
-        desc = data["current_condition"][0]["weatherDesc"][0]["value"].lower()
+        desc = data["current_condition"][0]["lang_ru"][0]["value"].lower()
+        #desc = data["current_condition"][0]["weatherDesc"][0]["value"].lower()
+        #if you wаnt english replаce lаng=ru w/ lаng=en аnd uncomment this line
         icon = next((e for k,e in weather_icons.items() if k.lower() in desc), "❓")
-        return f"{icon} {weather_translate.get(desc, desc.capitalize())} {t}°C (ощущ. {f}°C)"
+        return f"{icon} {desc.capitalize()} {t}°C (ощущ. {f}°C)"
+
     except:
         return "🌐 Упс! wttr.in не ответил вовремя."
 # - очень privacy invasive модуль, не рекомендую открbiBать браузер и/или открbiBать чтото что нежелательно для показа на публику
 def get_window():
-    if shutil.which("kdotool") is None:
-        return "⚠️ kdotool не найден"  # fallback если kdotool нет
+
     try:
         win_id = subprocess.check_output(
             ["kdotool", "getactivewindow"], encoding="utf-8"
@@ -89,6 +120,8 @@ def get_window():
         return f"💻 {title}" if title else "💻Рабочий стол"
     except:
         return "Рабочий стол"
+
+
 # - очень privacy invasive модуль, не рекомендую смотреть/cлушать нежелательнbiй для показа на публику контент пока это Bключено
 def get_music():
     try:
@@ -105,17 +138,15 @@ def get_music():
 
 weather_info = get_weather()
 last_weather_update = time.time()
+cpu = psutil.cpu_percent()
+ram = psutil.virtual_memory().percent
+temp = psutil.sensors_temperatures()
+gpu_util, vram_used, vram_total = get_gpu()
+cpu_temp = temp["coretemp"][0].current if "coretemp" in temp else "?"
 while True:
     if time.time() - last_weather_update > 120:
         weather_info = get_weather()
         last_weather_update = time.time()
-
-    cpu = psutil.cpu_percent()
-    ram = psutil.virtual_memory().percent
-    temp = psutil.sensors_temperatures()
-    gpu_util, vram_used, vram_total = get_gpu()
-    cpu_temp = temp["coretemp"][0].current if "coretemp" in temp else "?"
-
     parts = []
     #ломает winDowz саппорт, а кому он нужен? идите жрите магикчатбокс
     if ENABLE_HARDWARE:
