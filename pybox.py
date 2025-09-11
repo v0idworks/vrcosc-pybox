@@ -3,10 +3,10 @@ from pythonosc.udp_client import SimpleUDPClient
 from datetime import datetime
 
 ip = "127.0.0.1"
-#ip2 = "192.168.1.1" разкоментить если хотите коннектить кBест (замените айпи)
+ip2 = "192.168.1.1"
 port = 9000
 client = SimpleUDPClient(ip, port)
-#client2 = SimpleUDPClient(ip2, port) разкоментить если хотите коннектить кBест
+client2 = SimpleUDPClient(ip2, port)
 
 client2 = SimpleUDPClient(ip2, port)
 # - Настройки -
@@ -79,7 +79,7 @@ if shutil.which("kdotool") is None:
 
 
 # - Модуляки разнbiе
-#get_gpu работает через жопу
+#только для зеленbiх
 def get_gpu():
     try:
         out = subprocess.check_output(
@@ -92,7 +92,6 @@ def get_gpu():
         return None, None, None
 
 
-#работает через жопу если проBайдер интернета тоже так работает
 def get_weather():
     try:
         data = requests.get(f"https://wttr.in/{city}?format=j1&lang=ru", timeout=5).json()
