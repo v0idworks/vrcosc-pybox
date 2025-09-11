@@ -17,7 +17,7 @@ ENABLE_MUSIC = True
 ENABLE_2CLIENT = True #Для Bторого клиента
 def get_git():
     try:
-        return subprocess.check_output(["git", "rev-parse", "--short=6", "HEAD"]).decode("utf-8").strip()
+        return subprocess.check_output(["git", "rev-parse", "--short=7", "HEAD"]).decode("utf-8").strip()
     except subprocess.CalledProcessError:
         return "Гит шарманит, рестартай прогу."
 git_commit = "⚙️pybox " + get_git()
@@ -51,7 +51,6 @@ weather_icons = {
     "thunder":"🌩",
     "Rain with thunderstorm": "⛈️",
 }
-#если модуль погодbi на инглише пишет опять просто припиcbiBайте "инглиш нейм": "русский переBод" (не забудьте запятую)
 '''
 Устарело. Bместо этого теперь ?lang=ru
 weather_translate = {
