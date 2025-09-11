@@ -8,6 +8,7 @@ port = 9000
 client = SimpleUDPClient(ip, port)
 #client2 = SimpleUDPClient(ip2, port) разкоментить если хотите коннектить кBест
 
+client2 = SimpleUDPClient(ip2, port)
 # - Настройки -
 ENABLE_COMMIT = True
 ENABLE_RANDOM = True
@@ -15,7 +16,7 @@ ENABLE_WEATHER = True
 ENABLE_HARDWARE = True
 ENABLE_WINDOW = True
 ENABLE_MUSIC = True
-
+ENABLE_2CLIENT = True
 def get_git():
     try:
         return subprocess.check_output(["git", "rev-parse", "--short=6", "HEAD"]).decode("utf-8").strip()
@@ -27,11 +28,11 @@ city = "Москоу"
 # - Погода -
 #если модуль погодbi не пишет иконку то тогда делайте тоже что и снизу только "инглиш нейм": "иконка"
 weather_icons = {
-    "ясно": "☀️",
+    "солнечно": "☀️",
     "чистое небо": "🌙",
     "малооблачно": "⛅",
     "облачно": "☁️",
-    "пасмурно": "🌥",
+    "местами дождь": "🌥",
     "туман": "🌫",
     "местами возможен дождь": "🌦",
     "небольшой дождь": "🌧",
@@ -89,8 +90,6 @@ def get_gpu():
         return int(u), int(used), int(total)
     except:
         return None, None, None
-
-
 
 
 #работает через жопу если проBайдер интернета тоже так работает
@@ -184,5 +183,6 @@ while True:
             parts = [p for p in parts if not ("CPU" in p or "GPU" in p)]
     final_msg = "\n".join(parts)
     client.send_message("/chatbox/input", [final_msg, True])
-    #client2.send_message("/chatbox/input", [final_msg, True]) разкоментить если хотите коннектить кBест
-    time.sleep(2.5)
+    if ENABLE_2CLIENT:
+      client2.send_message("/chatbox/input", [final_msg, True])
+    time.sleep(10)
