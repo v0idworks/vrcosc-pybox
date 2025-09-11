@@ -7,8 +7,6 @@ ip2 = "192.168.1.1"
 port = 9000
 client = SimpleUDPClient(ip, port)
 client2 = SimpleUDPClient(ip2, port)
-
-client2 = SimpleUDPClient(ip2, port)
 # - Настройки -
 ENABLE_COMMIT = True
 ENABLE_RANDOM = True
@@ -16,7 +14,7 @@ ENABLE_WEATHER = True
 ENABLE_HARDWARE = True
 ENABLE_WINDOW = True
 ENABLE_MUSIC = True
-ENABLE_2CLIENT = True
+ENABLE_2CLIENT = True #Для Bторого клиента
 def get_git():
     try:
         return subprocess.check_output(["git", "rev-parse", "--short=6", "HEAD"]).decode("utf-8").strip()
