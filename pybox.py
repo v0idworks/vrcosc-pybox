@@ -67,7 +67,7 @@ weather_translate = {
 
 
 #чтоб самому текст напечатать сюда делаем так:стаBим запятую перед прошлbiм текстом если не стоит и пишем "текст"
-custom_messages = ["Добро пожалоBать B pybox-vrc","Это рандомbiй текст","tinyurl.com/pyboxvrc","сBой тоже можно BстаBить, загляни B код, строка 44"]
+custom_messages = ["Добро пожалоBать B pybox-vrc","Это рандомbiй текст","tinyurl.com/pyboxvrc"]
 if shutil.which("playerctl") is None:
     print("[❌] playerctl не найден (информация о музыке будет отключена)")
     ENABLE_MUSIC = False
