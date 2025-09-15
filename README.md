@@ -71,7 +71,10 @@ Alpine Linux(не тестил)
 ```
 ### поддержать меня
 - [криптобот](https://t.me/send?start=IVzATgwSpMLM)
-- monero: 86bvVgxwMxYJghTFF6TCTyXntDVbftb4Jf9PJxGg64WDjjZZPoHopPZEbAPeKdbEEGP2iKZfWx7EAWaBNPwpBm6EHGZUpJS
+- monero(1): 88Bo67jmBNaQhSbjhY77SJTjfkSziAX2qLWcck3uXsFZ2SnFZXkyqkBC4gy1kZErgGhjwiWtJkJugMujadr4B51P4pij1j7
+- monero(2): 89a7R2a1MQQLSyHTMKwyZ3QNQUBiQFakU6P8CqoJqX9sfFPByauHhw38Hcw2yHRnRC1dt4a3kAfE3Vt65mNLLYDpMJffw1X
+- btc(1):bc1qlgdl5v2m0q9t2lt9pcmks8ye6uscmvr5my9al6
+- btc(2):bc1qe9ful6j72zhralgsvvcgxgffgad26zs26w6hmg
 - [DA](https://www.donationalerts.com/c/random_tnt)
 #### кредитbi
 - сделано с <3 командой v0idworks(а именно рандомом_тнт)
