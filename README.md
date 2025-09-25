@@ -21,8 +21,7 @@
 ## Что НЕ умеет
 - Работать на win
 - работать на макос
-- работать на гноме,i3,сBей,cinnаmon,баджи,unity,и на том что не кде.
-
+- чек окна не будет работать на гноме,i3,сBей,cinnаmon,баджи,unity,и на том что не кде.
 ---
 ## как Bbiглядит
 <img width="331" height="735" alt="изображение" src="https://github.com/user-attachments/assets/da872c9d-061b-4c03-880d-d6b92d0da588"/>
@@ -30,45 +29,47 @@
 ## Что нужно
 - Python 3
 - пакеты: `psutil`, `requests`, `python-osc`
-- утилиты: `git`, `kdotool` (для окон), `playerctl` (для музыки)
+- утилиты(не обязательно): `git`(обязательно), `kdotool` (для окон), `playerctl` (для музыки)
 
 Установка питон-зависимостей:
 ```bash
 pip install psutil requests python-osc
 ```
 Установка опциональных зависимостей:
-Arch Linux: 
+Arch Linux:
 ```bash
-    sudo pacman -S git kdotool playerctl
+sudo pacman -S git kdotool playerctl
 ```
 Debian / Ubuntu(не тестил)
 ```bash
-    sudo apt update
-    sudo apt install git kdotool playerctl
+sudo apt update
+sudo apt install git kdotool playerctl
 ```
 
 Fedora(не тестил)
 ```bash
-    sudo dnf install git kdotool playerctl
+sudo dnf install git kdotool playerctl
 ```
 openSUSE(не тестил)
 ```bash
-    sudo zypper install git kdotool playerctl
+sudo zypper install git kdotool playerctl
 ```
 Alpine Linux(не тестил)
 ```bash
-    sudo apk add git kdotool playerctl
+sudo apk add git kdotool playerctl
 ```
 
 ---
 ## как юзать?
 ```bash
-    python pybox.py
+python main.py
 ```
-или 
+или
 ```bash
-    python3 pybox.py
+python3 main.py
 ```
+## а что а как а где Кастомизация???
+пошарьте по config.py
 ### поддержать меня
 - [криптобот](https://t.me/send?start=IVzATgwSpMLM)
 - monero(1): 88Bo67jmBNaQhSbjhY77SJTjfkSziAX2qLWcck3uXsFZ2SnFZXkyqkBC4gy1kZErgGhjwiWtJkJugMujadr4B51P4pij1j7
@@ -78,7 +79,7 @@ Alpine Linux(не тестил)
 - [DA](https://www.donationalerts.com/c/random_tnt)
 #### кредитbi
 - сделано с <3 командой v0idworks(а именно рандомом_тнт)
-- спасибо линусу дройдBардсу за git и линукс 
+- спасибо линусу дройдBардсу за git и линукс
 - спасибо кдешникам за плазму
 - и арчойдам за арчлинукс
 - а также Graham Gaylor и Jesse Joudrey за VRChat
@@ -95,4 +96,3 @@ Alpine Linux(не тестил)
 - Джесси Даффилду и Стефану Холлеру за [Lazygit](https://github.com/jesseduffield/lazygit)
 - Эдриану Фриду и Мэтту Райту за Open Sound Control (иначе этого проекта бbi небbiло)
 ---
-###### *see you next time....*
